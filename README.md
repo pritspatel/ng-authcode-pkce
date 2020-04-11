@@ -1,27 +1,17 @@
 # NgAuthcodePkce
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+This project is showing how to use Keycloak as IdP(Authorization server) and Authcode flow with PKCE. It is using oidc-client lib to manager oauth2 flow so that as a user you dont have to write code.
 
-## Development server
+### How to run this demo?
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Download keycloak from following url
 
-## Code scaffolding
+    https://www.keycloak.org/downloads
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Then follow the getting started tutorial on keycloak to setup
 
-## Build
+    https://www.keycloak.org/getting-started/getting-started-zip
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    Note : Ignore the step "Secure your first app" in that guide.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+3.  Register your client in Keycloak admin console.
