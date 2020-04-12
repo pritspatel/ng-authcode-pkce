@@ -26,21 +26,21 @@ export class AuthService {
         return this._userManager.signinRedirect();
     }
 
-    isLoggedIn(): Promise<boolean> {
-        return this._userManager.getUser().then(user => {
-            console.log('User : ' + user);
-            const userCurrent = !!user && !user.expired;
-            console.log('Current User : ' + userCurrent);
-            if (this._user !== user) {
-                this._loginChangedSubject.next(userCurrent);
-            }
-            this._user = user;
-            return userCurrent;
-        });
+  isLoggedIn() {
+  return this._userManager.getUser().then(user => {
+    console.log('User : ' + user);
+    const userCurrent = !!user && !user.expired;
+    console.log('Current User : ' + userCurrent);
+    if (this._user !== user) {
+      this._loginChangedSubject.next(userCurrent);
     }
+    this._user = user;
+    return userCurrent;
+  });
+}
 
-    completeLogin() {
-        return this._userManager.signinRedirectCallback().then(user => {
+  completeLogin() {
+    return this._userManager.signinRedirectCallback().then(user => {
             console.log('complete login user : ' + user);
             this._user = user;
             this._loginChangedSubject.next(!!user && !user.expired);
