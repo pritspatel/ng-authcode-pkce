@@ -1,3 +1,5 @@
 <h3>Angular Authcode flow with PKCE</h3>
 <button *ngIf="!isLoggedIn" (click)='login()'>Login</button>
 <button *ngIf="isLoggedIn" (click)='logout()'>Logout</button>
+
+<button *ngIf="isLoggedIn" (click)='getProducts()'>Load Products</button>

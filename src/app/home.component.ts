@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import {AuthService} from './auth-service.component';
 
 @Component({
@@ -10,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   isLoggedIn = false;
 
-  constructor(private _authService  :AuthService){
+  constructor(private _authService  :AuthService, public http: HttpClient){
     this._authService.loginChanged.subscribe(loggedIn => {
       this.isLoggedIn = loggedIn;
     });
@@ -32,4 +33,11 @@ export class HomeComponent implements OnInit {
     this._authService.logout();
   }
 
+  getProducts() {
+    this.http.get('http://localhost:8081/product')
+      .subscribe(
+        data => console.log(data),
+        err => console.log(err)
+      );
+  }
 }

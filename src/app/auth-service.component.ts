@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 export class AuthService {
 
     private _userManager: UserManager;
-    private _user: User;
+    public _user: User;
     private _loginChangedSubject = new Subject<boolean>();
 
     loginChanged = this._loginChangedSubject.asObservable();
