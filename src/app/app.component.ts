@@ -9,27 +9,27 @@ import { AuthService } from './auth-service.component';
 export class AppComponent implements OnInit{
 
   title = 'ng-authcode-pkce';
-  isLoggedIn = false;
+  //isLoggedIn = false;
 
   constructor(private _authService  :AuthService){
-    this._authService.loginChanged.subscribe(loggedIn => {
-      this.isLoggedIn = loggedIn;
-    });
+    // this._authService.loginChanged.subscribe(loggedIn => {
+    //   this.isLoggedIn = loggedIn;
+    // });
   }
 
   ngOnInit(){
-    this._authService.isLoggedIn().then( loggedIn => {
-      console.log('logged in : ' + loggedIn);
-      this.isLoggedIn = loggedIn;
-      console.log('isLoggedIn : ' + this.isLoggedIn);
-    })
+    // this._authService.isLoggedIn().then( loggedIn => {
+    //   console.log('logged in : ' + loggedIn);
+    //   this.isLoggedIn = loggedIn;
+    //   console.log('isLoggedIn : ' + this.isLoggedIn);
+    // })
   }
 
-  login(){
-    this._authService.login();
-  }
-
-  logout(){
-    this._authService.logout();
-  }
+  // login(){
+  //   this._authService.login();
+  // }
+  //
+  // logout(){
+  //   this._authService.logout();
+  // }
 }

@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SigninRedirectCallbackComponent } from './signin-redirect-callback.component';
 import { SignoutRedirectCallbackComponent } from './signout-redirect-callback.component';
+import { HomeComponent } from './home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SigninRedirectCallbackComponent,
-    SignoutRedirectCallbackComponent
+    SignoutRedirectCallbackComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
